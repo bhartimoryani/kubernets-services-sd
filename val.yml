@@ -11,6 +11,6 @@ spec:
     spec:
       containers:
         - name: app1
-          image: 'docker.io/nitinsingh01/val-uid:v1'
+          image: 'bhartim15/validimg'
           ports:
             - containerPort: 8080
