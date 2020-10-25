@@ -1,8 +1,11 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: app1
 spec:
+  selector:
+    matchLabels:
+      app: app1
   replicas: 3
   template:
     metadata:
@@ -11,6 +14,6 @@ spec:
     spec:
       containers:
         - name: app1
-          image: 'bhartim15/validimg'
+          image: 'docker.io/bhartim15/validimg'
           ports:
             - containerPort: 8080
