@@ -1,8 +1,11 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: validator
 spec:
+  selector:
+    matchLabels:
+      app: validator
   replicas: 2 # tells deployment to run 2 pods matching the template
   template: # create pods using pod definition in this template
     metadata:
@@ -11,7 +14,7 @@ spec:
     spec:
       containers:
       - name: validator
-        image: nitinsingh01/val-uid:v1
+        image: docker.io/bhartim15/validmongodb
         ports:
         - containerPort: 8080
         env:
